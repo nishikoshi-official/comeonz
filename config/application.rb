@@ -8,8 +8,17 @@ Bundler.require(*Rails.groups)
 
 module Comeonz
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.test_framework :rspec
+    end
+
+    config.i18n.available_locales = %i(ja en)
+    config.i18n.enforce_available_locales = true
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.time_zone = 'Asia/Tokyo'
   end
 end

@@ -17,4 +17,7 @@ vendor/bundle
 !/tmp/.keep
 
 # Ignore Byebug command history file.
-.byebug_history
+.byebug_histor
+
+#dotenv-rails
+.env

@@ -45,6 +45,10 @@ gem "font-awesome-rails"
 # for login
 gem "devise"
 
+# for Facebook_login
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # for model
 gem 'enum_help'
 
@@ -77,6 +81,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
